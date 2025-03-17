@@ -40,7 +40,8 @@ The OCR application involves:
 
     ```bash
     python -m venv .venv
-    source .venv/bin/activate  # On Windows use .venv\Scripts\activate
+    source .venv\Scripts\activate # For Windows
+    source .venv/bin/activate  # For Mac
     ```
 
 3. Install the required dependencies:
