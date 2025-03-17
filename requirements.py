@@ -9,3 +9,4 @@ scikit-learn>=0.24.2
 matplotlib>=3.4.3  # for visualizations
 tqdm>=4.61.2       # for progress tracking
 streamlit>=1.42.0
+nest_asyncio>=1.6.0
