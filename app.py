@@ -1,8 +1,12 @@
+import nest_asyncio
 import streamlit as st
 from PIL import Image
 from transformers import Qwen2VLForConditionalGeneration, AutoProcessor
 import torch
 from qwen_vl_utils import process_vision_info
+
+# Apply workaround for nested event loops
+nest_asyncio.apply()
 
 
 # Load the OCR model with caching to optimize performance
@@ -75,7 +79,7 @@ def highlight_text(text, keyword):
 
 
 # Streamlit Application UI
-st.set_page_config(page_title="OCR App with Byaldi & Qwen2-VL", layout="centered")
+st.set_page_config(page_title="OCR using Qwen2-VL", layout="centered")
 st.title("🖼️ Multilingual OCR Application")
 st.markdown(
     "Upload an image to instantly extract and search for multilingual (Swedish & English) text."
@@ -83,7 +87,7 @@ st.markdown(
 
 # Image upload interface with clearer instructions
 uploaded_file = st.file_uploader(
-    "Upload an image (Supported formats: JPG, PNG, JPEG)", type=["jpg", "png", "jpeg"]
+    "Attach an image (Supported formats: JPG, PNG, JPEG)", type=["jpg", "png", "jpeg"]
 )
 
 if uploaded_file is not None:
