@@ -39,7 +39,11 @@ def extract_text_from_image(image, model, processor):
                 {"type": "image", "image": image},
                 {
                     "type": "text",
-                    "text": "Extract all text from this image, including both Swedish and English.",
+                    "text":  """Analyze the text in the provided image. Extract all readable content,
+                                including both Swedish and English and present it in a structured 
+                                Markdown format that is clear, concise, and well-organized. Ensure 
+                                proper formatting (e.g., headings, lists, or code blocks) as necessary
+                                to represent the content effectively.""",
                 },
             ],
         }
